@@ -7,3 +7,12 @@ c:\users\user\documents\visual studio 2013\Projects\NaiwnyRozrostZiaren\NaiwnyRo
 c:\users\user\documents\visual studio 2013\Projects\NaiwnyRozrostZiaren\NaiwnyRozrostZiaren\obj\Debug\NaiwnyRozrostZiaren.csproj.GenerateResource.Cache
 c:\users\user\documents\visual studio 2013\Projects\NaiwnyRozrostZiaren\NaiwnyRozrostZiaren\obj\Debug\NaiwnyRozrostZiaren.exe
 c:\users\user\documents\visual studio 2013\Projects\NaiwnyRozrostZiaren\NaiwnyRozrostZiaren\obj\Debug\NaiwnyRozrostZiaren.pdb
+C:\Users\User\Documents\GitHub\Modelowanie\NaiwnyRozrostZiaren\NaiwnyRozrostZiaren\bin\Debug\NaiwnyRozrostZiaren.exe.config
+C:\Users\User\Documents\GitHub\Modelowanie\NaiwnyRozrostZiaren\NaiwnyRozrostZiaren\obj\Debug\NaiwnyRozrostZiaren.exe
+C:\Users\User\Documents\GitHub\Modelowanie\NaiwnyRozrostZiaren\NaiwnyRozrostZiaren\obj\Debug\NaiwnyRozrostZiaren.pdb
+C:\Users\User\Documents\GitHub\Modelowanie\NaiwnyRozrostZiaren\NaiwnyRozrostZiaren\bin\Debug\NaiwnyRozrostZiaren.exe
+C:\Users\User\Documents\GitHub\Modelowanie\NaiwnyRozrostZiaren\NaiwnyRozrostZiaren\bin\Debug\NaiwnyRozrostZiaren.pdb
+C:\Users\User\Documents\GitHub\Modelowanie\NaiwnyRozrostZiaren\NaiwnyRozrostZiaren\obj\Debug\NaiwnyRozrostZiaren.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\Modelowanie\NaiwnyRozrostZiaren\NaiwnyRozrostZiaren\obj\Debug\NaiwnyRozrostZiaren.MainForm.resources
+C:\Users\User\Documents\GitHub\Modelowanie\NaiwnyRozrostZiaren\NaiwnyRozrostZiaren\obj\Debug\NaiwnyRozrostZiaren.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\Modelowanie\NaiwnyRozrostZiaren\NaiwnyRozrostZiaren\obj\Debug\NaiwnyRozrostZiaren.csproj.GenerateResource.Cache

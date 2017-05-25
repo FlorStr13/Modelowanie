@@ -13,25 +13,33 @@ namespace NaiwnyRozrostZiaren
     public partial class MainForm : Form
     {
         bool running=false;
-        Plansza plansza;
+        Rozrost rozrost;
+        Rekrystalizacja rekrystalizacja;
         public MainForm()
         {
-            plansza = new Plansza(100);
+            rozrost = new Rozrost(100);
+            //rozrost = new Rozrost(10);
+            rekrystalizacja = new Rekrystalizacja();
             InitializeComponent();
+        }
+
+        private void wyswietl()
+        {
+            pictureBox1.Image = rozrost.wyswietl();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            plansza.krokCzasowy();
-            pictureBox1.Image = plansza.wyswietl();
+            rozrost.krokCzasowy();
+            wyswietl();
         }
 
         private void start_stop_Click(object sender, EventArgs e)
         {
             if(running ==false)
             {
-                plansza.setBrzegowe(this.checkBox1.Checked);
-                plansza.setSasiedstwo(this.comboBox1.SelectedIndex);
+                rozrost.setBrzegowe(this.checkBox1.Checked);
+                rozrost.setSasiedstwo(this.comboBox1.SelectedIndex);
                 timer1.Start();
                 running = true;
                 start_stop.Text = "Stop";
@@ -65,8 +73,8 @@ namespace NaiwnyRozrostZiaren
                 else
                 {
                    
-                    plansza.wstawLosowo(ile);
-                    pictureBox1.Image = plansza.wyswietl();
+                    rozrost.wstawLosowo(ile);
+                    wyswietl();
                 }
               
             }
@@ -90,8 +98,8 @@ namespace NaiwnyRozrostZiaren
                 }
                 else
                 {
-                    plansza.wstawLosowoZR(ile, r);
-                    pictureBox1.Image = plansza.wyswietl();
+                    rozrost.wstawLosowoZR(ile, r);
+                    wyswietl();
                 }
 
             }
@@ -115,8 +123,8 @@ namespace NaiwnyRozrostZiaren
                 }
                 else
                 {
-                    plansza.wstawRonomiernie(ile+1);
-                    pictureBox1.Image = plansza.wyswietl();
+                    rozrost.wstawRonomiernie(ile+1);
+                    wyswietl();
                 }
 
             }
@@ -134,8 +142,8 @@ namespace NaiwnyRozrostZiaren
                 MouseEventArgs me = (MouseEventArgs)e;
                 Point coordinates = me.Location;
                 //System.Console.Write(coordinates);
-                plansza.ozywPoKliku(coordinates);
-                pictureBox1.Image = plansza.wyswietl();
+                rozrost.ozywPoKliku(coordinates);
+                wyswietl();
             }
         }
 
@@ -151,8 +159,11 @@ namespace NaiwnyRozrostZiaren
                 }
                 else
                 {
-                    plansza = new Plansza(x);
-                    pictureBox1.Image = plansza.wyswietl();
+                    rozrost = new Rozrost(x);
+                    rekrystalizacja = new Rekrystalizacja();
+                    wyswietl();
+                    timer1.Stop();
+                    timer2.Stop();
                 }
                
             }
@@ -161,6 +172,31 @@ namespace NaiwnyRozrostZiaren
                 MessageBox.Show("Wielkość musza byc liczbami", "Blad",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
             }
+        }
+
+        private void rekrystalizacjaButton_Click(object sender, EventArgs e)
+        {
+           if(rozrost.ifend()&& running ==false)
+           {
+               rekrystalizacja.setBrzegowe(this.checkBox1.Checked);
+               rekrystalizacja.setSasiedstwo(this.comboBox1.SelectedIndex);
+               rekrystalizacja.pobierzZiarna(rozrost);             
+               this.timer2.Start();
+               running = true;
+               System.Console.Write("dziala");
+           }
+           else
+           {
+               this.timer2.Stop();
+               running = false;
+               System.Console.Write("nie dziala");
+           }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            this.pictureBox1.Image=rekrystalizacja.wyswietl();
+            rekrystalizacja.rekrystalizuj();
         }
 
     }

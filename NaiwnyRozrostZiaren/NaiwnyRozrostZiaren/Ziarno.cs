@@ -11,12 +11,20 @@ namespace NaiwnyRozrostZiaren
     {
         int ID;
         public Color color;
-        public bool death;
         static int IDall=0;
         private static readonly Random rand = new Random();
+        //do rozrostu
+        public bool death;
+        //do rekrystalizacji
+        double p;
+        bool sasiedzi;
+
         public Ziarno()
         {
-            death = true;           
+            color = Color.White;
+            sasiedzi = false;
+            death = true;
+            p = 0;
         }
 
         public void ozyw()
@@ -32,6 +40,7 @@ namespace NaiwnyRozrostZiaren
             this.ID = kiopiowane.ID;
             this.death = kiopiowane.death;
             this.color = kiopiowane.color;
+            this.p = kiopiowane.p;
         }
 
         //funkcja do randomowego wybierania kolorow
@@ -39,6 +48,47 @@ namespace NaiwnyRozrostZiaren
         {
             Color randomColor = Color.FromArgb(rand.Next(256),rand.Next(256),rand.Next(256));
             return randomColor;
+        }
+
+        public bool ifdeath()
+        {
+            if (this.death==false)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public double getP()
+        {
+            return this.p;
+        }
+        public void setP(double p)
+        {
+            this.p = p;
+        }
+        public void addP(double p)
+        {
+            this.p += p;
+        }
+        public bool getSasiedzi()
+        {
+            return this.sasiedzi;
+        }
+        public void setSasiedzi(bool sasiedzi)
+        {
+            this.sasiedzi = sasiedzi;
+        }
+        public int getId()
+        {
+            return this.ID;
+        }
+        public void kill()
+        {
+            this.death = true;
         }
 
     }

@@ -44,6 +44,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.stworzButton = new System.Windows.Forms.Button();
+            this.rekrystalizacjaButton = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +61,6 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // start_stop
@@ -189,12 +190,27 @@
             this.stworzButton.UseVisualStyleBackColor = true;
             this.stworzButton.Click += new System.EventHandler(this.stworzButton_Click);
             // 
+            // rekrystalizacjaButton
+            // 
+            this.rekrystalizacjaButton.Location = new System.Drawing.Point(506, 266);
+            this.rekrystalizacjaButton.Name = "rekrystalizacjaButton";
+            this.rekrystalizacjaButton.Size = new System.Drawing.Size(170, 55);
+            this.rekrystalizacjaButton.TabIndex = 14;
+            this.rekrystalizacjaButton.Text = "Rekrystalizacje";
+            this.rekrystalizacjaButton.UseVisualStyleBackColor = true;
+            this.rekrystalizacjaButton.Click += new System.EventHandler(this.rekrystalizacjaButton_Click);
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(684, 504);
+            this.Controls.Add(this.rekrystalizacjaButton);
             this.Controls.Add(this.stworzButton);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.comboBox1);
@@ -236,6 +252,8 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button stworzButton;
+        private System.Windows.Forms.Button rekrystalizacjaButton;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 

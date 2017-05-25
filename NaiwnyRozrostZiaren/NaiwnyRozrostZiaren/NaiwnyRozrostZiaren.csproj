@@ -51,6 +51,8 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Plansza.cs" />
+    <Compile Include="Rekrystalizacja.cs" />
+    <Compile Include="Rozrost.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ziarno.cs" />
