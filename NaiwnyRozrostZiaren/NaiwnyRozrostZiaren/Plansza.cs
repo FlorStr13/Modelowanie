@@ -16,7 +16,8 @@ namespace NaiwnyRozrostZiaren
         bool periodyczne;
         //potrzebne do hex rand zeby raz bylo prawe raz lewe
         static int nrKroku = 0;
-        private static readonly Random rand = new Random();
+        protected static readonly Random rand = new Random();
+
         public void setSasiedstwo(int s)
         {
             this.sasiedstwo = s;

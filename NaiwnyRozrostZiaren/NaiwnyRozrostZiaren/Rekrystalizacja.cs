@@ -20,10 +20,8 @@ namespace NaiwnyRozrostZiaren
         private static readonly Random rand = new Random();
         public Rekrystalizacja()
         {
-            pKrytyczne = 4215840142323.42;
             A = 86710969050178.5;
-            B= 9.41268203527779;
-          
+            B= 9.41268203527779;          
             naBrzegu = new List<Ziarno>();
         }
 
@@ -32,8 +30,8 @@ namespace NaiwnyRozrostZiaren
             this.ziarna=rozrost.getZiarna();
             this.ziarnaPoKroku = rozrost.getZiarnaPoKroku();
             this.rozmiar_x = rozrost.getRozmiar_x();
-            this.rozmiar_y = rozrost.getRozmiar_y();  
-            this.pKrytyczne = pKrytyczne/(this.rozmiar_x*this.rozmiar_y);
+            this.rozmiar_y = rozrost.getRozmiar_y();
+            this.pKrytyczne = 4215840142323.42 / (this.rozmiar_x * this.rozmiar_y);
             this.zabijZiarna();
             time = 0.001;
             deltaP = 0;
@@ -149,6 +147,8 @@ namespace NaiwnyRozrostZiaren
 
         void nadajPZiarna()
         {
+            /*System.Console.Write("Delta: ");
+            System.Console.Write(deltaP);*/
             double pKomurki = this.deltaP / (this.rozmiar_y * this.rozmiar_x);
             for(int i=0;i<this.rozmiar_x;i++)
             {
@@ -157,16 +157,18 @@ namespace NaiwnyRozrostZiaren
                     if(ziarna[i,j].getSasiedzi())
                     {
                         ziarna[i, j].addP((0.8*pKomurki));
-                        this.deltaP -= ziarna[i, j].getP();
+                        this.deltaP -= 0.8 * pKomurki;
                     }
                     else
                     {
                         ziarna[i, j].addP((0.2 * pKomurki));
-                        this.deltaP -= ziarna[i, j].getP();
+                        this.deltaP -= 0.2 * pKomurki;
                     }
                 }
             }
             double ile = deltaP / k;
+            /*System.Console.Write("ile: ");
+            System.Console.WriteLine(ile);*/
             while(deltaP>0)
             {
                 int n = rand.Next(naBrzegu.Count());

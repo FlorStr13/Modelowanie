@@ -50,6 +50,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MonteCarlo.cs" />
     <Compile Include="Plansza.cs" />
     <Compile Include="Rekrystalizacja.cs" />
     <Compile Include="Rozrost.cs" />

@@ -15,11 +15,13 @@ namespace NaiwnyRozrostZiaren
         bool running=false;
         Rozrost rozrost;
         Rekrystalizacja rekrystalizacja;
+        MonteCarlo monteCarlo;
         public MainForm()
         {
             rozrost = new Rozrost(100);
             //rozrost = new Rozrost(10);
             rekrystalizacja = new Rekrystalizacja();
+            monteCarlo = new MonteCarlo();
             InitializeComponent();
         }
 
@@ -176,7 +178,7 @@ namespace NaiwnyRozrostZiaren
 
         private void rekrystalizacjaButton_Click(object sender, EventArgs e)
         {
-           if(rozrost.ifend()&& running ==false)
+           if(rozrost.ifend() && running ==false)
            {
                rekrystalizacja.setBrzegowe(this.checkBox1.Checked);
                rekrystalizacja.setSasiedstwo(this.comboBox1.SelectedIndex);
@@ -198,6 +200,60 @@ namespace NaiwnyRozrostZiaren
             this.pictureBox1.Image=rekrystalizacja.wyswietl();
             rekrystalizacja.rekrystalizuj();
         }
+
+       
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            monteCarlo.run();
+            wyswietl();
+        }
+
+        private void monte_carlo_Click(object sender, EventArgs e)
+        {
+            if ( running == false)
+            {
+                monteCarlo.inicjalizuj(rozrost);               
+                timer3.Start();
+                running = true;
+                System.Console.Write("dziala");
+            }
+            else
+            {
+                this.timer3.Stop();
+                running = false;
+                System.Console.Write("nie dziala");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int ile = int.Parse(this.iloscText.Text);
+
+                if (ile <= 0)
+                {
+                    MessageBox.Show("ile musza wieksze od zera", "Blad",
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+                }
+                else
+                {
+                    monteCarlo.inicjalizuj(rozrost);
+                    monteCarlo.losujPlansze(ile);
+                    wyswietl();
+                }
+
+            }
+            catch (FormatException exp)
+            {
+                MessageBox.Show("Ile musza byc liczbami", "Blad",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+            }
+           
+        }
+
+
 
     }
 }

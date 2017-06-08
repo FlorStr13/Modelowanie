@@ -46,6 +46,9 @@
             this.stworzButton = new System.Windows.Forms.Button();
             this.rekrystalizacjaButton = new System.Windows.Forms.Button();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.monte_carlo = new System.Windows.Forms.Button();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +68,7 @@
             // 
             // start_stop
             // 
-            this.start_stop.Location = new System.Drawing.Point(506, 439);
+            this.start_stop.Location = new System.Drawing.Point(506, 266);
             this.start_stop.Name = "start_stop";
             this.start_stop.Size = new System.Drawing.Size(170, 55);
             this.start_stop.TabIndex = 1;
@@ -192,7 +195,7 @@
             // 
             // rekrystalizacjaButton
             // 
-            this.rekrystalizacjaButton.Location = new System.Drawing.Point(506, 266);
+            this.rekrystalizacjaButton.Location = new System.Drawing.Point(506, 327);
             this.rekrystalizacjaButton.Name = "rekrystalizacjaButton";
             this.rekrystalizacjaButton.Size = new System.Drawing.Size(170, 55);
             this.rekrystalizacjaButton.TabIndex = 14;
@@ -204,12 +207,38 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // monte_carlo
+            // 
+            this.monte_carlo.Location = new System.Drawing.Point(506, 388);
+            this.monte_carlo.Name = "monte_carlo";
+            this.monte_carlo.Size = new System.Drawing.Size(170, 55);
+            this.monte_carlo.TabIndex = 15;
+            this.monte_carlo.Text = "Monte Carlo";
+            this.monte_carlo.UseVisualStyleBackColor = true;
+            this.monte_carlo.Click += new System.EventHandler(this.monte_carlo_Click);
+            // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(506, 445);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(170, 55);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Losuj Calość";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(684, 504);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.monte_carlo);
             this.Controls.Add(this.rekrystalizacjaButton);
             this.Controls.Add(this.stworzButton);
             this.Controls.Add(this.checkBox1);
@@ -254,6 +283,9 @@
         private System.Windows.Forms.Button stworzButton;
         private System.Windows.Forms.Button rekrystalizacjaButton;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Button monte_carlo;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Button button1;
     }
 }
 

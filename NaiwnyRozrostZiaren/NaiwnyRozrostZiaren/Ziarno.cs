@@ -9,7 +9,7 @@ namespace NaiwnyRozrostZiaren
 {
     class Ziarno
     {
-        int ID;
+        public int ID { get; set; }
         public Color color;
         static int IDall=0;
         private static readonly Random rand = new Random();
@@ -91,5 +91,9 @@ namespace NaiwnyRozrostZiaren
             this.death = true;
         }
 
+        public void setID(int id)
+        {
+            this.ID = id;
+        }
     }
 }
